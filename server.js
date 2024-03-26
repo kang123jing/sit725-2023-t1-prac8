@@ -45,7 +45,6 @@ async function postCat(cat) {
 
 app.get('/api/cats', async (req, res) => {
     let result = await getAllCats();
-    console.log(result);
     client.close();
     res.json({statusCode: 201, message: 'success', data: result});
 });
