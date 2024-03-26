@@ -33,9 +33,6 @@ function submitForm() {
 
 $(document).ready(function(){
     $('.materialboxed').materialbox();
-    $('#clickMeButton').click(()=>{
-        clickMe();
-    });
     addCards(cardList);
     $('.modal').modal();
     $('#formSubmit').click(()=>{
