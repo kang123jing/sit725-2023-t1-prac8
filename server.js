@@ -38,8 +38,8 @@ app.post('/api/cat', async (req, res) => {
 });
 
 async function postCat(cat) {
-    client.connect();
-    let collection = client.db().collection('Cats');
+    await client.connect();
+    let collection = await client.db().collection('Cats');
     return collection.insertOne(cat);
 }
 
@@ -50,8 +50,8 @@ app.get('/api/cats', async (req, res) => {
 });
 
 async function getAllCats() {
-    client.connect();
-    let collection = client.db().collection('Cats');
+    await client.connect();
+    let collection = await client.db().collection('Cats');
     return collection.find().toArray();
 }
 
