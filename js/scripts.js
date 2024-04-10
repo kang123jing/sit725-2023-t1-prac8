@@ -24,7 +24,7 @@ function submitForm() {
 }
 
 function getCats() {
-    $.get('api/cats', (response) => {
+    $.get('/api/cats', (response) => {
         console.log(response.data);
         if (response.data) {
             addCards(response.data);
@@ -34,11 +34,12 @@ function getCats() {
 
 function postCat(cat) {
     $.ajax({
-        url: 'api/cat',
+        url: '/api/cats',
         data: cat,
         type: 'POST',
         success: (result) => {
             console.log(result.data);
+            location.reload();
         }
     })
 }
